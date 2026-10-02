@@ -1,0 +1,88 @@
+
+:root {
+  --bg: #f5f7f2;
+  --ink: #16231c;
+  --muted: #56655c;
+  --line: #cfd8cf;
+  --accent: #1f6f54;
+  --display: 'Bricolage Grotesque Variable', system-ui, sans-serif;
+  --body: 'Source Serif 4 Variable', Georgia, serif;
+  --pad: clamp(20px, 5vw, 56px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 19px;
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+}
+
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px var(--pad);
+  font-family: var(--display);
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.bar-name {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.bar nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  align-items: center;
+}
+
+.bar nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.bar nav a:hover,
+.bar nav a.active {
+  color: var(--accent);
+}
+
+.page {
+  min-height: 70vh;
+  padding: 100px var(--pad);
+}
+
+.page h1 {
+  font-family: var(--display);
+  font-size: clamp(48px, 9vw, 100px);
+}
+
+@media (max-width: 720px) {
+  .bar {
+    align-items: flex-start;
+    gap: 16px;
+    flex-direction: column;
+  }
+
+  .bar nav {
+    gap: 14px;
+    font-size: 15px;
+  }
+}
