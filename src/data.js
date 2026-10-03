@@ -13,3 +13,14 @@ export const profile = {
   linkedin: '',
   resume: '',
 };
+
+export const marqueeItems = [
+  'C++',
+  'Python',
+  'Machine Learning',
+  'React',
+  'LangChain',
+  'LangGraph',
+  'MCP',
+  'Open Source',
+];

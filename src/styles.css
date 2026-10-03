@@ -195,3 +195,35 @@ a {
     transform: none;
   }
 }
+/* Technology marquee */
+
+.marquee {
+  overflow: hidden;
+  border-block: 1px solid var(--line);
+  padding: 16px 0;
+  font-family: var(--display);
+  font-size: 22px;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+}
+
+.track span {
+  padding-right: 40px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.track span::after {
+  content: '/';
+  margin-left: 40px;
+  color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    transform: none !important;
+  }
+}
