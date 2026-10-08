@@ -227,3 +227,123 @@ a {
     transform: none !important;
   }
 }
+
+.sec {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 24px;
+  padding: 96px var(--pad);
+  border-top: 1px solid var(--line);
+}
+
+.sec h2 {
+  margin: 6px 0 0;
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.stack-sec {
+  border-top: 0;
+}
+
+/* project cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 22px;
+  margin-top: 36px;
+}
+
+.card {
+  display: block;
+  text-decoration: none;
+  position: relative;
+  --mx: 50%;
+  --my: 50%;
+}
+
+.card-inner {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg);
+  height: 100%;
+  position: relative;
+  transition: border-color 0.25s;
+}
+
+.card-inner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: radial-gradient(
+    260px circle at var(--mx) var(--my),
+    color-mix(in srgb, var(--accent) 16%, transparent),
+    transparent 70%
+  );
+}
+
+.card:hover .card-inner {
+  border-color: var(--accent);
+}
+
+.cover {
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+  background: color-mix(
+    in srgb,
+    var(--accent) 12%,
+    var(--bg)
+  );
+}
+
+.mono {
+  position: absolute;
+  left: 18px;
+  bottom: -42px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 230px;
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0.85;
+}
+
+.card-body {
+  padding: 18px 20px 22px;
+}
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--display);
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.card h3 {
+  margin: 6px 0 8px;
+  font-family: var(--display);
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.card .stack {
+  margin-top: 12px;
+  font-family: var(--display);
+  font-size: 15px;
+  color: var(--accent);
+}
