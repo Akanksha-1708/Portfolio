@@ -76,6 +76,7 @@ export default function ProjectCard({ p, hidden = false }) {
       to={`/work/${p.slug}`}
       className={`card${hidden ? ' is-hidden' : ''}`}
       data-c={p.category}
+      aria-label={`View project: ${p.title}`}
     >
       <div className="card-inner">
         <div className="cover" aria-hidden="true">
