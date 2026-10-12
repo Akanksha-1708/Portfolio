@@ -506,3 +506,79 @@ form .btn { justify-self: start; }
   .card-inner::after,
   .focus-card { transition: none; }
 }
+
+/* Projects Archive */
+.work-page {
+  min-height: 70vh;
+}
+
+.work-eyebrow {
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.work-title {
+  margin: 0 0 16px;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+}
+
+.work-intro {
+  max-width: 620px;
+  margin-bottom: 40px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.work-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 900px) {
+  .work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-intro {
+    margin-bottom: 28px;
+  }
+}
+/* Fix Work page layout */
+.work-page .work-section {
+  display: block;
+}
+
+.work-page .work-header {
+  display: block;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.work-page .work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  .work-page .work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .work-page .work-grid {
+    grid-template-columns: 1fr;
+  }
+}

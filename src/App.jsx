@@ -1,9 +1,7 @@
 import {NavLink,Route,Routes,Link} from 'react-router-dom';
 import Home from './pages/Home.jsx'
+import Work from './pages/Work.jsx';
 
-function Work(){
-  return <section className="page"><h1>Work</h1></section>
-}
 function About(){
   return <section className="page"><h1>About</h1></section>
 }
