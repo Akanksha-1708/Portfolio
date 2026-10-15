@@ -582,3 +582,211 @@ form .btn { justify-self: start; }
     grid-template-columns: 1fr;
   }
 }
+
+
+/* About page */
+.about-hero {
+  padding: clamp(80px, 12vw, 150px) var(--pad) 42px;
+  border-bottom: 1px solid var(--line);
+}
+
+.about-kicker {
+  margin-bottom: 24px;
+  color: var(--accent);
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.about-heading {
+  max-width: 1100px;
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(48px, 9vw, 112px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  font-weight: 600;
+}
+
+.about-heading span {
+  color: var(--accent);
+}
+
+.about-intro {
+  max-width: 680px;
+  margin-top: 30px;
+  color: var(--muted);
+  font-size: clamp(19px, 2.2vw, 25px);
+  line-height: 1.6;
+}
+
+.about-hero-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-family: var(--display);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.about-section {
+  padding-block: 72px;
+}
+
+.about-section-lead {
+  max-width: 580px;
+  margin-bottom: 24px;
+  color: var(--muted);
+}
+
+.about-skills {
+  gap: 12px;
+}
+
+.about-skill {
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.about-skill:hover {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 7%, var(--bg));
+  transform: translateY(-3px);
+}
+
+.about-timeline {
+  margin-top: 32px;
+}
+
+@media (max-width: 600px) {
+  .about-hero {
+    padding-top: 76px;
+  }
+
+  .about-hero-bottom {
+    gap: 12px 18px;
+    margin-top: 32px;
+  }
+
+  .about-section {
+    padding-block: 52px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-skill {
+    transition: none;
+  }
+}
+
+/* Work page — editorial layout */
+.work-page {
+  min-height: 70vh;
+}
+
+.work-hero {
+  padding: clamp(76px, 10vw, 130px) var(--pad) 36px;
+  border-bottom: 1px solid var(--line);
+}
+
+.work-page .work-eyebrow {
+  margin: 0 0 24px;
+  color: var(--accent);
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.work-page .work-title {
+  max-width: 1100px;
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(48px, 9vw, 112px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.work-page .work-title span {
+  color: var(--accent);
+}
+
+.work-page .work-intro {
+  max-width: 680px;
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-size: clamp(19px, 2.2vw, 25px);
+  line-height: 1.6;
+}
+
+.work-hero-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  margin-top: 44px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-family: var(--display);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.work-projects {
+  padding: 48px var(--pad) 88px;
+}
+
+.work-page .work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.work-card-reveal {
+  min-width: 0;
+}
+
+.work-card-reveal .card {
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .work-page .work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .work-hero {
+    padding-top: 72px;
+  }
+
+  .work-hero-bottom {
+    gap: 12px 18px;
+    margin-top: 32px;
+  }
+
+  .work-projects {
+    padding-block: 32px 60px;
+  }
+
+  .work-page .work-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-page .work-reveal,
+  .work-card-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
