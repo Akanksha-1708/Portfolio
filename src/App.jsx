@@ -2,6 +2,7 @@ import {NavLink,Route,Routes,Link} from 'react-router-dom';
 import Home from './pages/Home.jsx'
 import Work from './pages/Work.jsx';
 import About from './pages/About.jsx';
+import ProjectDetails from './pages/ProjectDetails.jsx';
 
 function Writing(){
   return <section className="page"><h1>Writing</h1></section>
@@ -30,6 +31,7 @@ export default function App(){
         <Route path="/about" element={<About/>}/>
         <Route path="/writing" element={<Writing/>}/>
         <Route path="/contact" element={<Contact/>}/>
+        <Route path="/work/:slug" element={<ProjectDetails />} />
         <Route path="*" element={<section className="page"><h1>404</h1><Link to="/">Go home</Link></section>} />
       </Routes>
     </main>

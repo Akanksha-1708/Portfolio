@@ -790,3 +790,38 @@ form .btn { justify-self: start; }
     transform: none;
   }
 }
+
+
+/* Project detail page */
+.project-detail-page { min-height: 70vh; }
+.project-detail-hero { padding: clamp(64px, 9vw, 112px) var(--pad) 48px; border-bottom: 1px solid var(--line); }
+.project-back-link { display: inline-block; margin-bottom: 42px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.project-back-link:hover { color: var(--accent); }
+.project-detail-kicker { margin: 0 0 22px; color: var(--accent); font-family: var(--display); font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.project-detail-title { max-width: 1000px; margin: 0; font-family: var(--display); font-size: clamp(44px, 8vw, 96px); line-height: 1; letter-spacing: -0.05em; font-weight: 600; overflow-wrap: anywhere; }
+.project-detail-description { max-width: 760px; margin: 28px 0 0; color: var(--muted); font-size: clamp(18px, 2vw, 22px); line-height: 1.7; }
+.project-detail-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.project-detail-button { display: inline-flex; align-items: center; gap: 12px; padding: 13px 19px; border: 1px solid var(--accent); border-radius: 999px; background: var(--accent); color: var(--bg); text-decoration: none; font-weight: 600; transition: transform 0.2s, opacity 0.2s; }
+.project-detail-button:hover { transform: translateY(-2px); opacity: 0.88; }
+.project-detail-button-secondary { background: transparent; color: var(--text); border-color: var(--line); }
+.project-detail-content { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; padding: 56px var(--pad) 88px; }
+.project-detail-section { min-width: 0; }
+.project-detail-label { margin: 0 0 20px; color: var(--accent); font-family: var(--display); font-size: 12px; letter-spacing: 0.12em; }
+.project-detail-section h2 { margin: 0 0 16px; font-family: var(--display); font-size: clamp(25px, 3vw, 36px); letter-spacing: -0.03em; }
+.project-detail-section > p:last-child { color: var(--muted); line-height: 1.8; }
+.project-detail-stack { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.project-detail-tag { padding: 9px 13px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 13px; transition: border-color 0.2s, background 0.2s, transform 0.2s; }
+.project-detail-tag:hover { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 7%, var(--bg)); transform: translateY(-3px); }
+.project-not-found { padding-block: 100px; }
+.project-not-found h1 { margin-bottom: 24px; }
+
+@media (max-width: 650px) {
+  .project-detail-hero { padding-top: 64px; }
+  .project-back-link { margin-bottom: 32px; }
+  .project-detail-content { grid-template-columns: 1fr; gap: 40px; padding-block: 40px 60px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-detail-button, .project-back-link { transition: none; }
+}
