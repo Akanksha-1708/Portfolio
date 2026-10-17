@@ -9,7 +9,7 @@ export const profile = {
     'I am a CSE student at PSIT, exploring AI, machine learning, and software engineering. I enjoy building practical projects and working with emerging technologies.',
   status: 'Open to internships',
   github: 'https://github.com/Akanksha-1708',
-  email: '',
+  email: 'akadwi96@gmail.com',
   linkedin: '',
   resume: '',
 };

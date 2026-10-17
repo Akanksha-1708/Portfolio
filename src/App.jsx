@@ -3,12 +3,10 @@ import Home from './pages/Home.jsx'
 import Work from './pages/Work.jsx';
 import About from './pages/About.jsx';
 import ProjectDetails from './pages/ProjectDetails.jsx';
+import Contact from './pages/Contact.jsx';
 
 function Writing(){
   return <section className="page"><h1>Writing</h1></section>
-}
-function Contact(){
-  return <section className="page"><h1>Contact</h1></section>
 }
 
 export default function App(){
