@@ -10,8 +10,8 @@ export const profile = {
   status: 'Open to internships',
   github: 'https://github.com/Akanksha-1708',
   email: 'akadwi96@gmail.com',
-  linkedin: '',
-  resume: '',
+  linkedin: 'https://www.linkedin.com/in/akanksha-dwivedi-741623317',
+  resume: 'https://drive.google.com/file/d/1I9DGvIjol9r3RaJNS9EiHz2H-PDxaB9T/view?usp=drive_link',
 };
 
 export const marqueeItems = [
@@ -55,7 +55,7 @@ export const projects = [
       'Streamlit',
     ],
     url: 'ADD_DEPLOYMENT_LINK',
-    github: 'ADD_GITHUB_LINK',
+    github: 'https://github.com/Akanksha-1708/Agentic-AI-mini-projects',
   },
   {
     id: 'skillswap',
