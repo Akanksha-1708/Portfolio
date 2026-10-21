@@ -15,13 +15,26 @@ const categories = [
 export default function Work() {
   const pageRef = useRef(null);
   const [activeCategory, setActiveCategory] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const filteredProjects =
-    activeCategory === 'All'
-      ? projects
-      : projects.filter(
-          (project) => project.category === activeCategory
-        );
+  const filteredProjects = projects.filter((project) => {
+    const matchesCategory =
+      activeCategory === 'All' ||
+      project.category === activeCategory;
+
+    const query = searchQuery.trim().toLowerCase();
+
+    const searchableText = [
+      project.title,
+      project.category,
+      project.blurb,
+      ...project.stack,
+    ]
+      .join(' ')
+      .toLowerCase();
+
+    return matchesCategory && searchableText.includes(query);
+  });
 
   useGSAP(() => {
     gsap.fromTo(
@@ -63,6 +76,16 @@ export default function Work() {
       </section>
 
       <section className="work-projects">
+        <div className="work-search">
+          <input
+            type="search"
+            value={searchQuery}
+            onChange={(event) => setSearchQuery(event.target.value)}
+            placeholder="Search projects or technologies..."
+            aria-label="Search projects by name or technology"
+          />
+        </div>
+
         <div className="work-filters" aria-label="Filter projects">
           {categories.map((category) => (
             <button
@@ -82,13 +105,19 @@ export default function Work() {
           {filteredProjects.length === 1 ? 'project' : 'projects'}
         </p>
 
-        <div className="work-grid">
-          {filteredProjects.map((project) => (
-            <div className="work-card-reveal" key={project.id}>
-              <ProjectCard p={project} />
-            </div>
-          ))}
-        </div>
+        {filteredProjects.length > 0 ? (
+          <div className="work-grid">
+            {filteredProjects.map((project) => (
+              <div className="work-card-reveal" key={project.id}>
+                <ProjectCard p={project} />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="work-empty" role="status">
+            No projects found. Try another search or category.
+          </p>
+        )}
       </section>
     </main>
   );

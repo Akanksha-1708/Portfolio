@@ -855,3 +855,9 @@ form .btn { justify-self: start; }
 @media (prefers-reduced-motion: reduce) {
   .work-filter { transition: none; }
 }
+
+/* Work page search */
+.work-search { margin-bottom: 20px; }
+.work-search input { width: 100%; max-width: 480px; padding: 13px 16px; border: 1px solid var(--line); border-radius: 12px; background: transparent; color: var(--text); font: inherit; outline: none; transition: border-color 0.2s; }
+.work-search input::placeholder { color: var(--muted); }
+.work-search input:focus { border-color: var(--accent); }
