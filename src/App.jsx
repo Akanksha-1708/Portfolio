@@ -6,6 +6,7 @@ import About from './pages/About.jsx';
 import ProjectDetails from './pages/ProjectDetails.jsx';
 import Contact from './pages/Contact.jsx';
 import NotFound from './pages/NotFound.jsx';
+import Footer from './components/Footer.jsx';
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
+      <Footer />
     </>
   );
 }
