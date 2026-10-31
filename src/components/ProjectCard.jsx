@@ -79,8 +79,12 @@ export default function ProjectCard({ p, hidden = false }) {
       aria-label={`View project: ${p.title}`}
     >
       <div className="card-inner">
-        <div className="cover" aria-hidden="true">
-          <span className="mono">{p.title[0].toLowerCase()}</span>
+        <div className="cover">
+          {p.image?(
+            <img src={p.image} alt={`${p.title} project preview`}/>
+          ):(
+            <span className="mono">{p.title[0].toLowerCase()}</span>
+          )}
         </div>
 
         <div className="card-body">

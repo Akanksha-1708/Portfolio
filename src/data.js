@@ -1,4 +1,5 @@
 // Instead of writing your personal information directly inside every React component, you keep it in one place.
+import gitverseImage from './assets/gitverse/gitverse_preview.png'
 
 export const profile = {
   name: 'Akanksha Dwivedi',
@@ -32,6 +33,7 @@ export const projects = [
     slug: 'gitverse',
     title: 'GitVerse',
     category: 'Web Development',
+    image: gitverseImage,
     year: '2026',
     blurb:
       'Explore and compare GitHub profiles through interactive analytics. Search users, compare their statistics, discover top repositories, and visualize programming language usage.',
