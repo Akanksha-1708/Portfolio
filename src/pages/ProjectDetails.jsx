@@ -5,6 +5,11 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { projects } from '../data.js';
 
+import repoAnalytics from '../assets/gitverse/repo_analytics.png';
+import userAnalytics from '../assets/gitverse/user_analytics.png';
+import userComparison from '../assets/gitverse/user_comparison.png';
+import userRepo from '../assets/gitverse/user_repo.png';
+
 export default function ProjectDetails() {
   const { slug } = useParams();
   const pageRef = useRef(null);
@@ -44,6 +49,33 @@ export default function ProjectDetails() {
     typeof url === 'string' &&
     url.startsWith('https://') &&
     !url.includes('ADD_');
+
+  const gitverseScreenshots = [
+    {
+      image: repoAnalytics,
+      title: 'Compare Repository Analytics',
+      description:
+        'Analyze and compare the repositories of two GitHub users side by side. Explore repository statistics, activity, and development insights to understand their project contributions.',
+    },
+    {
+      image: userAnalytics,
+      title: 'Explore GitHub Profile Analytics',
+      description:
+        'Get a detailed overview of a GitHub user’s profile, including contributions, followers, public repositories, and coding activity to understand their development journey.',
+    },
+    {
+      image: userComparison,
+      title: 'Compare GitHub Developers',
+      description:
+        'Compare two GitHub profiles in one place using key metrics such as followers, repositories, contributions, and programming activity to identify differences in their development profiles.',
+    },
+    {
+      image: userRepo,
+      title: 'Discover User Repositories',
+      description:
+        'Browse a GitHub user’s public repositories and explore project-level information, including repository details, programming languages, and other available statistics.',
+    },
+  ];
 
   return (
     <section className="project-detail-page" ref={pageRef}>
@@ -108,6 +140,32 @@ export default function ProjectDetails() {
           </div>
         </section>
       </div>
+
+      {project.slug === 'gitverse' && (
+        <section className="project-gallery project-detail-reveal">
+          <p className="project-detail-label">03 / PROJECT PREVIEW</p>
+          <h2>Explore GitVerse</h2>
+          <p className="project-gallery-intro">
+            A closer look at the different features and interfaces of GitVerse.
+          </p>
+
+          <div className="project-gallery-grid">
+            {gitverseScreenshots.map((screenshot) => (
+              <article className="project-gallery-item" key={screenshot.title}>
+                <div className="project-gallery-image">
+                  <img
+                    src={screenshot.image}
+                    alt={screenshot.title}
+                    loading="lazy"
+                  />
+                </div>
+                <h3>{screenshot.title}</h3>
+                <p>{screenshot.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
     </section>
   );
 }
